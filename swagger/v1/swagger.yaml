@@ -1,0 +1,84 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/users/password/new":
+    get:
+      summary: new password
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/password/edit":
+    get:
+      summary: edit password
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/password":
+    patch:
+      summary: update password
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update password
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create password
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users":
+    post:
+      summary: create registration
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/sign_in":
+    get:
+      summary: new session
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create session
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/sign_out":
+    delete:
+      summary: delete session
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/validate_token":
+    get:
+      summary: validate_token token_validation
+      responses:
+        '200':
+          description: successful
+  "/api/v1/user":
+    get:
+      summary: show user
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update user
+      responses:
+        '200':
+          description: successful
+    put:
+      summary: update user
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://localhost:5000
+  variables:
+    defaultHost:
+      default: localhost
