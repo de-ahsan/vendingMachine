@@ -8,6 +8,7 @@
 #  confirmed_at           :datetime
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
+#  deposit_amount         :bigint
 #  email                  :string           not null, indexed
 #  encrypted_password     :string           not null
 #  first_name             :string
@@ -20,6 +21,7 @@
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string           indexed
+#  role                   :integer
 #  sign_in_count          :integer          default(0)
 #  tokens                 :json             not null
 #  uid                    :string           not null, indexed => [provider]

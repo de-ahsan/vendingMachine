@@ -5,9 +5,19 @@ module Api
 
       before_action :require_check_if_changing_password, only: :update
 
+      def all
+        @users = User.all
+
+        render json: @users
+      end
+
       def show; end
 
       def update
+        user.update!(user_params)
+      end
+
+      def destroy
         user.update!(user_params)
       end
 
@@ -24,7 +34,7 @@ module Api
       end
 
       def user_params
-        params.require(:user).permit(:email, :password, :first_name, :last_name, :locale)
+        params.require(:user).permit(:email, :password, :first_name, :last_name, :locale, :role)
       end
     end
   end

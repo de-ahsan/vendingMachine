@@ -14,7 +14,15 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resource :user, only: %i[show update]
+      resource :user, only: %i[show update destroy] do
+        collection do
+          get :all
+        end
+      end
+      resources :products
+      post :buy, controller: :vending_machine
+      post :deposit, controller: :vending_machine
+      post :reset, controller: :vending_machine
 
       devise_scope :user do
         resources :users, only: [] do
