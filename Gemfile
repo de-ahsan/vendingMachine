@@ -25,8 +25,7 @@ gem 'jb', '~> 0.8.0'
 
 # Pagination
 gem 'pagy', '~> 5.10'
-gem 'rswag-api'
-gem 'rswag-ui'
+gem 'rswag'
 
 group :development, :test do
   gem 'bullet', '~> 7.0.2'

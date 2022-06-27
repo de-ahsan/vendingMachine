@@ -8,7 +8,7 @@
 #  confirmed_at           :datetime
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
-#  deposit_amount         :bigint
+#  deposit_amount         :bigint           default(0)
 #  email                  :string           not null, indexed
 #  encrypted_password     :string           not null
 #  first_name             :string
@@ -52,5 +52,10 @@ class User < ApplicationRecord
 
   def send_devise_notification(notification, *args)
     devise_mailer.send(notification, self, *args).deliver_later
+  end
+
+  def update_deposit_amount(amount, operation)
+    amount = operation == 'deposit' ? deposit_amount + amount : deposit_amount - amount
+    update(deposit_amount: amount)
   end
 end

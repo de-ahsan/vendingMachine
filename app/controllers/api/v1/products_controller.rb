@@ -38,7 +38,6 @@ module Api
 
       private
 
-
       def authorize_user
         return if current_user == @product.seller
 

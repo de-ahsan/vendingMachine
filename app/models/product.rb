@@ -15,6 +15,9 @@
 #  index_products_on_seller_id  (seller_id)
 #
 class Product < ApplicationRecord
-  belongs_to :seller, class_name: 'User', foreign_key: true
+  belongs_to :seller, class_name: 'User', foreign_key: :seller_id
 
+  def update_product_quantity(quantity)
+    update(available_count: available_count - quantity)
+  end
 end

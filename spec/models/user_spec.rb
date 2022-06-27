@@ -8,7 +8,7 @@
 #  confirmed_at           :datetime
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
-#  deposit_amount         :bigint
+#  deposit_amount         :bigint           default(0)
 #  email                  :string           not null, indexed
 #  encrypted_password     :string           not null
 #  first_name             :string
